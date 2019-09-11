@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpXsrfTokenExtractor } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Video } from 'src/app/models/types';
 
 const apiUrl = 'https://api.angularbootcamp.com';
 
@@ -10,11 +11,11 @@ const apiUrl = 'https://api.angularbootcamp.com';
 })
 export class VideoDashboardComponent implements OnInit {
 
-  videoList: any = [];
-  selected: any = null;
+  videoList: Video[] = [];
+  selected: Video = null;
 
   constructor(http: HttpClient) {
-    http.get<any[]>(apiUrl + '/videos').subscribe(videos => {
+    http.get<Video[]>(apiUrl + '/videos').subscribe(videos => {
       this.videoList = videos;
     });
   }
@@ -22,7 +23,7 @@ export class VideoDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onVideoSelected(video) {
+  onVideoSelected(video: Video) {
     this.selected = video;
   }
 

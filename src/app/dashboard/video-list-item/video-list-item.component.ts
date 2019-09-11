@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Video } from 'src/app/models/types';
 
 @Component({
   selector: 'app-video-list-item',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./video-list-item.component.scss']
 })
 export class VideoListItemComponent implements OnInit {
-  @Input() video: any;
+  @Input() video: Video;
 
   constructor() { }
 

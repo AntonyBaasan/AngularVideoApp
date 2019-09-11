@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Video } from 'src/app/models/types';
 
 @Component({
   selector: 'app-video-list',
@@ -6,9 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./video-list.component.scss']
 })
 export class VideoListComponent implements OnInit {
-  @Input() videoList: any = [];
-  @Input() selectedVideo: any = null;
-  @Output() selectVideo = new EventEmitter();
+  @Input() videoList: Video[] = [];
+  @Input() selectedVideo: Video = null;
+  @Output() selectVideo = new EventEmitter<Video>();
 
   constructor() {
   }
@@ -16,11 +17,11 @@ export class VideoListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(video) {
+  onSelect(video: Video) {
     this.selectVideo.emit(video);
   }
 
-  isSelected(video) {
+  isSelected(video: Video) {
     return this.selectedVideo === video;
   }
 }
