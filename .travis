@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+branches:
+  only:
+  - master
+script:
+- ng build --prod
+deploy:
+  provider: firebase
+  token:
+    secure: FF4KzUmZLEmuhv/25IrAQs3lKvTQrm4Ur0MuBK5UAxH7/xYdRranOArgFbmbhkr0tmXpRKQAt8WWOpNsCSSSlAOQ3QX2l0aFeYOuEKZs93xd22IlsZulwnp1NWVMwNnIvU5UkiOmvVPvkTjeua46dfNYqLyNoQmn48314yPfXzU2ZNrCQESO9O8b/2nAfDsPpMYxh8vCQJkfzB1uFril3tkJLEj3mui9585p8q4QPTQxEdhUhsO4TYYNV1q0cJY0vijZtVK6OM8Vbm9/5aDB7zTpVPiBdLHS+hXMDmr0Pnf5WKleYfrzNyQZAerJzFDiYFskXhWXXjiuJps9clkXxpmQn7LqUWj6ttQmVC+tbHJJCNo/+igiK2rtF5weygJDF1zvfw0Nr2fB0ztRbZmM52PL1gUpDJx8REG3f8TsTIf9bcKuF19KdgNzpprPezVnROJLuQhRZqLfpw9HzbC5HH8dovBLnmfShkTby+SO30DT0sS2LdIImys17DDnMootpWEafwZq4kf7Teor2B8JLApiF9VUIJMGVGiELV241nqZfnnUJOYqzY9v/dwOZrYrgSv7WRYYpp/+dr8il/x1cnQOV5elkLXpTpeR8z85cxaZprhhbh6OWjXovEHQkzu8533saV2Jc6t4oC5R7rLVOgI4k/4frObY3Q6p3JWhyRI=
