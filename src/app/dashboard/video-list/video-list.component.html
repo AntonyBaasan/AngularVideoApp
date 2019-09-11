@@ -1,10 +1,7 @@
 <ul>
     <li *ngFor="let v of videoList">
-        <a [class.active]="selectedVideo === v" (click)="onSelect(v)">{{v.title}}</a>
-        <!-- <ul>
-            <li *ngFor="let detail of v.viewDetails">
-                {{detail.age}} ({{detail.date}})
-            </li>
-        </ul> -->
+        <a [class.active]="selectedVideo === v" (click)="onSelect(v)">
+            <app-video-list-item [video]="v"></app-video-list-item>
+        </a>
     </li>
 </ul>

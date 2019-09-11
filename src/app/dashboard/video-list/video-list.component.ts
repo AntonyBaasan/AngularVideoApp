@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class VideoListComponent implements OnInit {
   @Input() videoList: any = [];
   @Input() selectedVideo: any = null;
-  @Output() selectVideo: EventEmitter<any> = new EventEmitter();
+  @Output() selectVideo = new EventEmitter();
 
   constructor() {
   }
