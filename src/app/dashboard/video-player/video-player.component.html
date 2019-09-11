@@ -1,3 +1,8 @@
-<p>video-player works!</p>
 
-<app-stat-filters></app-stat-filters>
+<div>Video details</div>
+<div *ngIf="!video">Please select a video</div>
+<div *ngIf="video">
+
+<div>{{video.title}}</div>
+
+</div>

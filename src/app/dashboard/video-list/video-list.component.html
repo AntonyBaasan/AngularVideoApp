@@ -1,3 +1,10 @@
-<p>video-list works!</p>
-
-<app-video-player></app-video-player>
+<ul>
+    <li *ngFor="let v of videoList">
+        <a [class.active]="selectedVideo === v" (click)="onSelect(v)">{{v.title}}</a>
+        <!-- <ul>
+            <li *ngFor="let detail of v.viewDetails">
+                {{detail.age}} ({{detail.date}})
+            </li>
+        </ul> -->
+    </li>
+</ul>

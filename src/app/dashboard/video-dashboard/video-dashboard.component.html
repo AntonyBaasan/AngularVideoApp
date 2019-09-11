@@ -1,1 +1,7 @@
-<app-video-list></app-video-list>
+<app-video-list 
+    [videoList]="videoList" 
+    [selectedVideo]="selected" 
+    (onSelectVideo)="videoSelected($event)"></app-video-list>
+<app-video-player [video]="selected"></app-video-player>
+
+<app-stat-filters></app-stat-filters>
