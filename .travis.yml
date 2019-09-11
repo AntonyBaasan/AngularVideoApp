@@ -7,7 +7,7 @@ branches:
   only:
   - master
 script:
-- ng build --prod
+- npm run prod
 deploy:
   provider: firebase
   token:
