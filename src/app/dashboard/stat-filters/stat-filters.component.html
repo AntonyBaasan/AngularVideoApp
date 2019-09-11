@@ -1,1 +1,14 @@
-<p>stat-filters works!</p>
+<section>
+    <div>
+        <form [formGroup]="form" (ngSubmit)="saveStat()">
+            <div>
+                <label for="name">Name</label>
+                <input
+                    id="name"
+                    type="text"
+                    formControlName="name"
+                />
+            </div>
+        </form>
+    </div>
+</section>

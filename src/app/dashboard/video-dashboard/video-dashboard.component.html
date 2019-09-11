@@ -2,6 +2,8 @@
     [videoList]="videoList$ | async" 
     [selectedVideo]="selected" 
     (selectVideo)="onVideoSelected($event)"></app-video-list>
+    
+<hr/>
 <app-video-player [video]="selected"></app-video-player>
-
+<hr/>
 <app-stat-filters></app-stat-filters>
