@@ -22,7 +22,7 @@ export class VideoDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  videoSelected(video) {
+  onVideoSelected(video) {
     this.selected = video;
   }
 
