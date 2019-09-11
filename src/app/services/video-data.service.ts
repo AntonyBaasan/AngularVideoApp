@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Video } from '../models/types';
+import { HttpClient } from '@angular/common/http';
+
+const apiUrl = 'https://api.angularbootcamp.com';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoDataService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getVideos(): Observable<Video>{
-    http.get<any[]>(apiUrl + '/videos').subscribe(videos => {
-      this.videoList = videos;
-    });
+  getVideos(): Observable<Video[]> {
+    return this.http.get<Video[]>(apiUrl + '/videos');
   }
 }
