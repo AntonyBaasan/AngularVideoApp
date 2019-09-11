@@ -22,10 +22,7 @@ export class VideoListComponent implements OnInit {
   }
 
   isSelected(video) {
-    if(this.selectedVideo && this.selectedVideo.id == video.id){
-      return true;
-    }
-    // return this.selectedVideo === video;
+    return this.selectedVideo === video;
   }
 }
 
