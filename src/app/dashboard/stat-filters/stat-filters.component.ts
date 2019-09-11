@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stat-filters',
@@ -19,8 +19,9 @@ export class StatFiltersComponent implements OnInit {
 
   createForm(fb: FormBuilder): FormGroup {
     return fb.group({
-      name: [''],
-      email: [''],
+      name: ['', Validators.required],
+      comment: ['', Validators.required],
+      email: ['', [Validators.email, Validators.required]],
     });
   }
 

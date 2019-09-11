@@ -3,12 +3,20 @@
         <form [formGroup]="form" (ngSubmit)="saveStat()">
             <div>
                 <label for="name">Name</label>
-                <input
-                    id="name"
-                    type="text"
-                    formControlName="name"
-                />
+                <input id="name" type="text" formControlName="name" />
             </div>
+            <div *ngIf="form.get('name')?.invalid && form.get('name').touched">Please insert name</div>
+            <div>
+                <label for="comment">Comment</label>
+                <textarea id="comment" type="text" rows="5" formControlName="comment"></textarea>
+            </div>
+            <div *ngIf="form.get('comment')?.invalid && form.get('comment').touched">Please insert comment</div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="text" formControlName="email" />
+            </div>
+            <div *ngIf="form.get('email')?.invalid && form.get('email').touched">Please insert email</div>
+            <button [disabled]="!form.valid" [class.disabled]="!form.valid">Done</button>
         </form>
     </div>
 </section>
