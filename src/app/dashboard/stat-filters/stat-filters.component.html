@@ -2,20 +2,27 @@
     <div>
         <form [formGroup]="form" (ngSubmit)="saveStat()">
             <div>
-                <label for="name">Name</label>
+                <label for="name">Name</label><br/>
                 <input id="name" type="text" formControlName="name" />
-            </div>
             <div *ngIf="form.get('name')?.invalid && form.get('name').touched">Please insert name</div>
+            </div>
             <div>
-                <label for="comment">Comment</label>
+                <label for="comment">Comment</label><br/>
                 <textarea id="comment" type="text" rows="5" formControlName="comment"></textarea>
+                <div *ngIf="form.get('comment')?.invalid && form.get('comment').touched">Please insert comment</div>
             </div>
-            <div *ngIf="form.get('comment')?.invalid && form.get('comment').touched">Please insert comment</div>
             <div>
-                <label for="email">Email</label>
+                <label for="email">Email</label><br/>
                 <input id="email" type="text" formControlName="email" />
+                <div *ngIf="form.get('email')?.invalid && form.get('email').touched">Please insert email</div>
             </div>
-            <div *ngIf="form.get('email')?.invalid && form.get('email').touched">Please insert email</div>
+            <div>
+                <label for="videoType">Video Type</label><br/>
+                <select id="videoType" formControlName="videoType">
+                    <option *ngFor="let t of videoTypes" [value]="t">{{t}}</option>
+                </select>
+                <div *ngIf="form.get('videoType')?.invalid && form.get('videoType').touched">Please select video type</div>
+            </div>
             <button [disabled]="!form.valid" [class.disabled]="!form.valid">Done</button>
         </form>
     </div>

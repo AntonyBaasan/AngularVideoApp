@@ -9,9 +9,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class StatFiltersComponent implements OnInit {
   form: FormGroup;
   stats: string[] = [];
+  videoTypes = ['type1', 'type2'];
 
   constructor(fb: FormBuilder) {
     this.form = this.createForm(fb);
+
+    this.form.valueChanges.subscribe(ch => console.log(ch));
   }
 
   ngOnInit() {
@@ -19,14 +22,16 @@ export class StatFiltersComponent implements OnInit {
 
   createForm(fb: FormBuilder): FormGroup {
     return fb.group({
-      name: ['', Validators.required],
+      name: ['aaa', Validators.required],
       comment: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
+      videoType: [''],
     });
   }
 
   saveStat() {
     console.log(this.form);
 
+    this.form.reset();
   }
 }

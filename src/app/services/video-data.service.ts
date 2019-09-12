@@ -10,6 +10,14 @@ const apiUrl = 'https://api.angularbootcamp.com';
   providedIn: 'root'
 })
 export class VideoDataService {
+  getVideoById(id: string): Observable<Video> {
+    return this.http
+      .get<Video[]>(apiUrl + '/videos').pipe(
+        map((videos: Video[]) => {
+          return videos.find(v => v.id === id);
+        })
+      );
+  }
 
   constructor(private http: HttpClient) { }
 
